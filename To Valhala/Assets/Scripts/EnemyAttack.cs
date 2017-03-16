@@ -16,7 +16,9 @@ public class EnemyAttack : MonoBehaviour
 
 	private Vector2 TargetTrans;
 
-	//Transform target;
+	public float attMaxRange;
+	public float attMinRange;
+
 
 	public int moveSpeed;
 
@@ -27,8 +29,8 @@ public class EnemyAttack : MonoBehaviour
 	PlayerHealth playerHealth;
 //	EnemyHealth enemyHealth;
 
-
-	bool playerInRange = false;
+	bool playerAttRange;
+	bool playerInRange;
 
 	void Awake () {
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -43,44 +45,31 @@ public class EnemyAttack : MonoBehaviour
 
 	}
 
-	/*void OnTriggerEnter (Collider other)
-	{
-		// if entering collider is the player
-		if(other.gameObject == player) 
-		{
-			playerInRange = true;
-		}
-	}
 
-	void OnTriggerExit (Collider other)
-	{
-		// if exiting collider is the player
-		if(other.gameObject == player) {
-			playerInRange = false;
-		}
-	}*/
 
 	void Update ()
 	{
 
-		//target = GameObject.FindGameObjectWithTag ("Player").transform;
 
+		// enemy will move towards the character when in range
 		if ((Vector2.Distance(transform.position, character.transform.position) < maxRange) && (Vector2.Distance(transform.position, character.transform.position) > minRange))
 		{
 			transform.LookAt (character.transform);
 			transform.position += transform.forward * moveSpeed * Time.deltaTime;
+		
 		}
-		/*if (playerInRange == true)
+		// enemy will deal damage within a range
+		if ((Vector2.Distance(transform.position, character.transform.position) < attMaxRange) && (Vector2.Distance(transform.position, character.transform.position) > attMinRange))
 		{
-			Debug.Log("is in range");
-			//myTrans.position += myTrans * moveSpeed * Time.deltaTime;
-		}*/
+			
+			playerAttRange = true;
+		}
 
 
 
 		timer += Time.deltaTime;
 
-		if(timer >= timeBetweenAttacks && playerInRange ) {
+		if(timer >= timeBetweenAttacks && playerAttRange ) {
 			Attack ();
 		}
 
