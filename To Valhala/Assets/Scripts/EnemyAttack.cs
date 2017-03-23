@@ -64,12 +64,15 @@ public class EnemyAttack : MonoBehaviour
 			
 			playerAttRange = true;
 		}
-
-
+		/*else if ((Vector2.Distance(transform.position, character.transform.position) > attMaxRange) && (Vector2.Distance(transform.position, character.transform.position) < attMinRange))
+		{
+			playerAttRange = false;
+		}*/
 
 		timer += Time.deltaTime;
 
-		if(timer >= timeBetweenAttacks && playerAttRange ) {
+		if(timer >= timeBetweenAttacks && playerAttRange ) 
+		{
 			Attack ();
 		}
 

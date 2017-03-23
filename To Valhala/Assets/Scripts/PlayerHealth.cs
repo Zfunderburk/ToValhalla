@@ -12,7 +12,9 @@ public class PlayerHealth : MonoBehaviour {
 	public float flashSpeed = 5f;
 	public Color flashColor = new Color(1f, 0f, 0f, 0.1f);
 
-//	bool isDead;
+	public Walking walking;
+
+	bool isDead;
 	bool damaged;														// True when Damaged
 				
 	void Awake () {
@@ -24,18 +26,29 @@ public class PlayerHealth : MonoBehaviour {
 			damageImage.color = flashColor;
 		}
 		else {
-//			damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+			damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
 		}
+		damaged = false; 
 	}
 
 	public void TakeDamage (int amount) {
 		damaged = true;
 		currentHealth -= amount;
 		healthSlider.value = currentHealth;
-//		if(currentHealth <=0 && !isDead) {
-//			
-//		}
+		if(currentHealth <=0 && !isDead)
+		{
+			Dead ();
+		}
+
 	}
 
+	public void Dead ()
+	{
+		if (currentHealth <= 0)
+		{
+			isDead = true;
+			walking.enabled = false;	
+		}
+	}
 
 }
