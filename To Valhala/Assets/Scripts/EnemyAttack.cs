@@ -27,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
 	Transform myTrans;
 	GameObject player;
 	PlayerHealth playerHealth;
-//	EnemyHealth enemyHealth;
+	EnemyHealth enemyHealth;
 
 	bool playerAttRange;
 	bool playerInRange;
