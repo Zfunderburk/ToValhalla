@@ -4,10 +4,8 @@ using System.Collections;
 
 public class Walking : MonoBehaviour 
 {
-
-
 	public float maxSpeed = 10f;				//walking speed
-	public float jumpVelocity = 7f;			//jump height	
+	public float jumpVelocity = 7f;				//jump height	
 
 	public LayerMask playerMask;				//sets the layermask so that the raycast from the player hits the ground and turns isgrounded to true and false
 
@@ -34,7 +32,7 @@ public class Walking : MonoBehaviour
 
 
 		//Move (Input.GetAxisRaw ("Horizontal"));			//everyone liked the other better but leaving in to maybe use later	
-		Move (Input.GetAxis ("Horizontal"));				//ads a speed up to max walking speed instead of immediatly being at that speed like raw
+		Move (Input.GetAxis ("Horizontal"));				//adds a speed up to max walking speed instead of immediatly being at that speed like raw
 		if (Input.GetButtonDown ("Jump"))
 			{
 			Jump ();
