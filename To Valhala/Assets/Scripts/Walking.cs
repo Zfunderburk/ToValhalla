@@ -10,7 +10,7 @@ public class Walking : MonoBehaviour
 	public LayerMask playerMask;				//sets the layermask so that the raycast from the player hits the ground and turns isgrounded to true and false
 
 	Transform myTrans;							//sets a transform to the transform of the object the script is attachted to
-	Transform tagGround;						// transform of the tag on the capsul 
+	public Transform tagGround;						// transform of the tag on the capsul 
 
 	Rigidbody2D myBody;							//sets a rigidbody to the rigidbody of the object
 
@@ -22,14 +22,15 @@ public class Walking : MonoBehaviour
 		myBody = this.GetComponent <Rigidbody2D> ();		//calling rigidbody 
 		myTrans = this.GetComponent <Transform> ();			//calling transform
 
-		tagGround = GameObject.Find (this.name + "/ground_Tag").transform; //this calls the character gameobject then calls a child of that game object called ground_Tag
+		//tagGround = GameObject.Find (this.name + "/ground_Tag").transform; //this calls the character gameobject then calls a child of that game object called ground_Tag
 	}
 
 
 	void FixedUpdate ()
 	{
-		isGrounded = Physics2D.Linecast (myTrans.position, tagGround.position, playerMask);
-
+		RaycastHit2D hit = Physics2D.Linecast (myTrans.position, tagGround.position, playerMask);
+		//Debug.Log (hit.collider.name);
+		isGrounded = hit.collider != null;
 
 		//Move (Input.GetAxisRaw ("Horizontal"));			//everyone liked the other better but leaving in to maybe use later	
 		Move (Input.GetAxis ("Horizontal"));				//adds a speed up to max walking speed instead of immediatly being at that speed like raw
