@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour {
 	public Image damageImage;  											//Flash to show Damage
 	public float flashSpeed = 5f;
 	public Color flashColor = new Color(1f, 0f, 0f, 0.1f);
+	public Animator character;
 
 	public Walking walking;
 
@@ -47,7 +48,11 @@ public class PlayerHealth : MonoBehaviour {
 		if (currentHealth <= 0)
 		{
 			isDead = true;
-			walking.enabled = false;	
+			walking.enabled = false;
+			character.SetBool ("isDead", true);
+			character.SetBool ("Move", false);
+			character.SetBool ("Jump", false);
+			character.SetBool ("Atk", false);
 		}
 	}
 

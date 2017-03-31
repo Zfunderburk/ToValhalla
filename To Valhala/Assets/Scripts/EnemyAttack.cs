@@ -22,6 +22,8 @@ public class EnemyAttack : MonoBehaviour
 
 	public int moveSpeed;
 
+	public Animator zombie;
+
 
 	Rigidbody2D myBody;	
 	Transform myTrans;
@@ -78,7 +80,7 @@ public class EnemyAttack : MonoBehaviour
 
 	void Attack () {
 		timer = 0f;
-
+		zombie.SetBool ("atkRange", true);
 		if(playerHealth.currentHealth > 0) {
 			playerHealth.TakeDamage (attackDamage);
 		}

@@ -7,7 +7,7 @@ public class Walking : MonoBehaviour
 	public float maxSpeed = 10f;				//walking speed
 	public float jumpVelocity = 7f;				//jump height	
 	public LayerMask playerMask;				//sets the layermask so that the raycast from the player hits the ground and turns isgrounded to true and false
-	public Animator player;
+	public Animator character;
 
 	Transform myTrans;							//sets a transform to the transform of the object the script is attachted to
 	public Transform tagGround;						// transform of the tag on the capsul 
@@ -37,7 +37,8 @@ public class Walking : MonoBehaviour
 		if (Input.GetButtonDown ("Jump"))
 			{
 			Jump ();
-			player.SetBool ("Jump", true);
+			character.SetBool ("Jump", true);
+//			player.SetBool ("Jump", false);
 			}
 	}
 
@@ -49,11 +50,18 @@ public class Walking : MonoBehaviour
 		Vector2 moveVel = myBody.velocity;					//makes the rigidbody and velocity into a vector2
 		moveVel.x = horizontalInput * maxSpeed;				//moveVel is maxspeed multiplied by the input from the keyboard
 		myBody.velocity = moveVel;							//sets the velocity on the rigibody to the above statement
+//		character.SetBool ("Move", true);	
 	}
 
 	public void Jump ()
 	{
 		if (isGrounded)
 			myBody.velocity += jumpVelocity * Vector2.up; 		//vector2.up just sets them both to 0 same as New Vector 2 (0, 0)
+//		player.SetBool ("Jump", true);
+	}
+
+	public void Attack ()
+	{
+		//Currently does nothing
 	}
 }
