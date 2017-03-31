@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f255c54bae6f84e489f4c35dad9c9da2
-timeCreated: 1490555376
+guid: 16007122f93f744eb975ebed91386fe0
+timeCreated: 1490999183
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,7 +11,7 @@ TextureImporter:
     21300008: Atk5
     21300010: Atk6
     21300012: Atk7
-    21300014: Atk8
+    21300014: Swing_SpreadSheet_7
     21300016: Atk9
     21300018: Atk10
     21300020: Atk11
@@ -68,9 +68,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 55
-        y: 637
-        width: 99
-        height: 407
+        y: 569
+        width: 130
+        height: 376
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -80,10 +80,10 @@ TextureImporter:
       name: Atk2
       rect:
         serializedVersion: 2
-        x: 274
-        y: 637
-        width: 122
-        height: 407
+        x: 280
+        y: 569
+        width: 195
+        height: 376
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -93,10 +93,10 @@ TextureImporter:
       name: Atk3
       rect:
         serializedVersion: 2
-        x: 516
-        y: 637
-        width: 168
-        height: 407
+        x: 524
+        y: 569
+        width: 180
+        height: 376
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -106,10 +106,10 @@ TextureImporter:
       name: Atk4
       rect:
         serializedVersion: 2
-        x: 747
-        y: 637
-        width: 156
-        height: 407
+        x: 753
+        y: 569
+        width: 162
+        height: 439
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,10 +119,10 @@ TextureImporter:
       name: Atk5
       rect:
         serializedVersion: 2
-        x: 1010
-        y: 637
-        width: 99
-        height: 440
+        x: 964
+        y: 568
+        width: 131
+        height: 430
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,10 +132,10 @@ TextureImporter:
       name: Atk6
       rect:
         serializedVersion: 2
-        x: 1193
-        y: 637
-        width: 100
-        height: 441
+        x: 1121
+        y: 569
+        width: 172
+        height: 425
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,23 +145,23 @@ TextureImporter:
       name: Atk7
       rect:
         serializedVersion: 2
-        x: 1406
-        y: 637
-        width: 99
-        height: 440
+        x: 1388
+        y: 569
+        width: 131
+        height: 430
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Atk8
+      name: Swing_SpreadSheet_7
       rect:
         serializedVersion: 2
         x: 1618
-        y: 637
-        width: 156
-        height: 407
+        y: 569
+        width: 162
+        height: 439
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,9 +172,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 55
-        y: 120
-        width: 168
-        height: 407
+        y: 29
+        width: 180
+        height: 376
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: Atk10
       rect:
         serializedVersion: 2
-        x: 284
-        y: 120
-        width: 122
-        height: 407
+        x: 321
+        y: 29
+        width: 195
+        height: 376
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: Atk11
       rect:
         serializedVersion: 2
-        x: 475
-        y: 120
-        width: 99
-        height: 407
+        x: 623
+        y: 29
+        width: 130
+        height: 376
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
