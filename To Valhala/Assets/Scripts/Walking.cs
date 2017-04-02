@@ -8,6 +8,7 @@ public class Walking : MonoBehaviour
 	public float jumpVelocity = 7f;				//jump height	
 	public LayerMask playerMask;				//sets the layermask so that the raycast from the player hits the ground and turns isgrounded to true and false
 	public Animator character;
+	public Walking walking;
 
 	Transform myTrans;							//sets a transform to the transform of the object the script is attachted to
 	public Transform tagGround;						// transform of the tag on the capsul 
@@ -33,13 +34,21 @@ public class Walking : MonoBehaviour
 		isGrounded = hit.collider != null;
 
 		//Move (Input.GetAxisRaw ("Horizontal"));			//everyone liked the other better but leaving in to maybe use later	
-		Move (Input.GetAxis ("Horizontal"));				//adds a speed up to max walking speed instead of immediatly being at that speed like raw
+		Move (Input.GetAxis ("Horizontal"));
+//		{
+//			character.SetBool ("Move", true);
+//		}													//adds a speed up to max walking speed instead of immediatly being at that speed like raw
 		if (Input.GetButtonDown ("Jump"))
 			{
 			Jump ();
 			character.SetBool ("Jump", true);
-//			player.SetBool ("Jump", false);
+			character.SetBool ("Atk", false);
 			}
+
+		if (Input.GetButtonDown("Fire1"))
+		{
+			Attack ();
+		}
 	}
 
 	public void Move (float horizontalInput)
@@ -62,6 +71,8 @@ public class Walking : MonoBehaviour
 
 	public void Attack ()
 	{
-		//Currently does nothing
+		character.SetBool ("Atk", true);
+		character.SetBool ("Jump", false);
+		character.SetBool ("Move", false);
 	}
 }

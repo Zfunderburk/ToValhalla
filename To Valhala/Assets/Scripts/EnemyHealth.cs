@@ -1,16 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour 
 {
 	public int startingHealth = 100;
 	public int currentHealth;
-	public AudioClip deathClip;
+//	public AudioClip deathClip;
+	public Slider enemyHealth;
+	public Animator zombie;
 
 	Animator anim;
 	AudioSource enemyAudio;
-	CapsuleCollider capsuleCollider;
+	BoxCollider2D boxCollider;
 	bool isDead;
+
+
 
 	public GameObject enemy;
 
@@ -19,11 +24,16 @@ public class EnemyHealth : MonoBehaviour
 	{
 		anim = GetComponent <Animator> ();
 		enemyAudio = GetComponent <AudioSource> ();
-		capsuleCollider = GetComponent <CapsuleCollider> ();
+		boxCollider = GetComponent <BoxCollider2D> ();
 
 		currentHealth = startingHealth; // sets the current health to 100 so it is the same as the starting health
 	}
 
+
+	void Update () 
+	{
+		
+	}
 
 	public void TakeDamage (int amount)
 	{
@@ -48,12 +58,13 @@ public class EnemyHealth : MonoBehaviour
 	void Death ()
 	{
 		isDead = true;
+		zombie.SetBool ("isDead", true);
 
-		capsuleCollider.isTrigger = true;
+		boxCollider.isTrigger = true;
 
 		anim.SetTrigger ("Dead"); 	//this "Dead" could change depending on what the animations are called make sure they match
 
-		enemyAudio.clip = deathClip;
+//		enemyAudio.clip = deathClip;
 		enemyAudio.Play ();
 
 		GameObject.Destroy (enemy);

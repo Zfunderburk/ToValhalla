@@ -6,6 +6,8 @@ public class PlayerAttack : MonoBehaviour
 	public float timeBetweenAttacks = 0.5f;
 	public int attackDamage = 10;
 
+	public Animator character;
+
 
 	float timer;
 
@@ -26,9 +28,12 @@ public class PlayerAttack : MonoBehaviour
 
 	void Attack () {
 		timer = 0f;
-		//needs a on mouse button click type thing
-		if(playerHealth.currentHealth > 0) {
-			playerHealth.TakeDamage (attackDamage);
+		if (Input.GetButtonDown("Fire1"))
+		{
+			character.SetBool ("Atk", true);
 		}
+//		if(playerHealth.currentHealth > 0) {
+//			playerHealth.TakeDamage (attackDamage);
+//		}
 	}
 }
