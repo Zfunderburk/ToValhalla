@@ -17,6 +17,7 @@ public class Walking : MonoBehaviour
 	public bool canMoveInAir = true;
 	public bool isGrounded = false;					//will allow for double jumps
 
+
 	void Start ()
 	{
 		myBody = this.GetComponent <Rigidbody2D> ();		//calling rigidbody 
@@ -34,13 +35,20 @@ public class Walking : MonoBehaviour
 
 		//Move (Input.GetAxisRaw ("Horizontal"));			//everyone liked the other better but leaving in to maybe use later	
 		Move (Input.GetAxis ("Horizontal"));
-//		{
+		{
 //			character.SetBool ("Move", true);
-//		}													//adds a speed up to max walking speed instead of immediatly being at that speed like raw
+		}													//adds a speed up to max walking speed instead of immediatly being at that speed like raw
+
+//		if (Input.GetButton ("d"))
+//		{
+//			Move (Input.GetAxis ("Horizontal"));
+//			character.SetBool ("Move", true);
+//		}
+
 		if (Input.GetButtonDown ("Jump"))
 			{
 			Jump ();
-			character.SetBool ("Jump", true);
+			character.SetTrigger ("Jump");
 			character.SetBool ("Atk", false);
 			}
 
