@@ -63,7 +63,7 @@ public class Walking : MonoBehaviour
 
 	public void Jump ()
 	{
-		if (isGrounded = true)
+		if (isGrounded == true)
 			myBody.velocity += jumpVelocity * Vector2.up; 		//vector2.up just sets them both to 0 same as New Vector 2 (0, 0)
 //		player.SetBool ("Jump", true);
 	}

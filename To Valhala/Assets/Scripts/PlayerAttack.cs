@@ -7,8 +7,8 @@ public class PlayerAttack : MonoBehaviour
 	public int attackDamage = 10;
 
 	public Animator character;
-	public float maxRange;
-	public float minRange;
+/*	public float maxRange;
+	public float minRange;*/
 	public float attMaxRange;
 	public float attMinRange;
 
@@ -17,10 +17,16 @@ public class PlayerAttack : MonoBehaviour
 
 	float timer;
 
+	public GameObject enemy;
+
 
 	PlayerHealth playerHealth;
 	EnemyHealth enemyHealth;
 
+	void Awake ()
+	{
+		enemyHealth = enemy.GetComponent <EnemyHealth> ();
+	}
 
 	void Update ()
 	{
@@ -31,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
 //			Attack ();
 //		}
 
-		if ((Vector2.Distance(transform.position, character.transform.position) < attMaxRange) && (Vector2.Distance(transform.position, character.transform.position) > attMinRange))
+		if ((Vector2.Distance(transform.position, enemy.transform.position) < attMaxRange) && (Vector2.Distance(transform.position, enemy.transform.position) > attMinRange))
 		{
 
 			enemyAttRange = true;
@@ -51,9 +57,10 @@ public class PlayerAttack : MonoBehaviour
 		if (Input.GetButtonDown("Fire1"))
 		{
 			character.SetBool ("Atk", true);
+			if(enemyHealth.currentHealth > 0) {
+				enemyHealth.TakeDamage (attackDamage);
+			}
 		}
-		if(enemyHealth.currentHealth > 0) {
-			enemyHealth.TakeDamage (attackDamage);
-		}
+
 	}
 }

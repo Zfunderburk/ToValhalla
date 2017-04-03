@@ -71,7 +71,7 @@ public class EnemyHealth : MonoBehaviour
 		isDead = true;
 		zombie.SetBool ("isDead", true);
 
-		boxCollider.isTrigger = true;
+		//boxCollider.isTrigger = true;
 
 		anim.SetTrigger ("Dead"); 	//this "Dead" could change depending on what the animations are called make sure they match
 
