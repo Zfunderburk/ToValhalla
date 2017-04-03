@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
 	AudioSource enemyAudio;
 	BoxCollider2D boxCollider;
 	bool isDead;
+	bool damaged;
 
 
 
@@ -35,23 +36,33 @@ public class EnemyHealth : MonoBehaviour
 		
 	}
 
+//	public void TakeDamage (int amount)
+//	{
+//		if (isDead)
+//		{
+//			return;			//if the enemy is dead there is no point in calculating damage
+//		}
+//
+//		enemyAudio.Play ();		//plays the audio when the enemy is hit
+//
+//		currentHealth -= amount;
+//
+//
+//		if(currentHealth <= 0)
+//		{
+//			Death ();
+//		}
+//
+//	}
+
 	public void TakeDamage (int amount)
 	{
-		if (isDead)
-		{
-			return;			//if the enemy is dead there is no point in calculating damage
-		}
-
-		enemyAudio.Play ();		//plays the audio when the enemy is hit
-
+		damaged = true;
 		currentHealth -= amount;
-
-
-		if(currentHealth <= 0)
-		{
+		enemyHealth.value = currentHealth;
+		if (currentHealth <= 0 && !isDead) {
 			Death ();
 		}
-
 	}
 
 

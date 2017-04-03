@@ -24,7 +24,6 @@ public class EnemyAttack : MonoBehaviour
 
 	public Animator zombie;
 
-
 	Rigidbody2D myBody;	
 	Transform myTrans;
 	GameObject player;
@@ -58,6 +57,7 @@ public class EnemyAttack : MonoBehaviour
 		{
 			transform.LookAt (character.transform);
 			transform.position += transform.forward * moveSpeed * Time.deltaTime;
+			zombie.SetBool ("moveRange", true);
 		
 		}
 		// enemy will deal damage within a range

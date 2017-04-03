@@ -53,6 +53,7 @@ public class PlayerHealth : MonoBehaviour {
 			character.SetBool ("Move", false);
 			character.SetBool ("Jump", false);
 			character.SetBool ("Atk", false);
+			SceneManager.LoadScene ("Menu");
 		}
 	}
 

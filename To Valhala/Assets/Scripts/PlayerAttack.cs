@@ -7,7 +7,13 @@ public class PlayerAttack : MonoBehaviour
 	public int attackDamage = 10;
 
 	public Animator character;
+	public float maxRange;
+	public float minRange;
+	public float attMaxRange;
+	public float attMinRange;
 
+	bool enemyRange;
+	bool enemyAttRange;
 
 	float timer;
 
@@ -18,12 +24,26 @@ public class PlayerAttack : MonoBehaviour
 
 	void Update ()
 	{
+//		timer += Time.deltaTime;
+//
+//		if(timer >= timeBetweenAttacks) 
+//		{
+//			Attack ();
+//		}
+
+		if ((Vector2.Distance(transform.position, character.transform.position) < attMaxRange) && (Vector2.Distance(transform.position, character.transform.position) > attMinRange))
+		{
+
+			enemyAttRange = true;
+		}
+
 		timer += Time.deltaTime;
 
-		if(timer >= timeBetweenAttacks) 
+		if(timer >= timeBetweenAttacks && enemyAttRange ) 
 		{
 			Attack ();
 		}
+		enemyAttRange = false;
 	}
 
 	void Attack () {
@@ -32,8 +52,8 @@ public class PlayerAttack : MonoBehaviour
 		{
 			character.SetBool ("Atk", true);
 		}
-//		if(playerHealth.currentHealth > 0) {
-//			playerHealth.TakeDamage (attackDamage);
-//		}
+		if(enemyHealth.currentHealth > 0) {
+			enemyHealth.TakeDamage (attackDamage);
+		}
 	}
 }

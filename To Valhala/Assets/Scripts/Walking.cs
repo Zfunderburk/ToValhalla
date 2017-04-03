@@ -8,7 +8,6 @@ public class Walking : MonoBehaviour
 	public float jumpVelocity = 7f;				//jump height	
 	public LayerMask playerMask;				//sets the layermask so that the raycast from the player hits the ground and turns isgrounded to true and false
 	public Animator character;
-	public Walking walking;
 
 	Transform myTrans;							//sets a transform to the transform of the object the script is attachted to
 	public Transform tagGround;						// transform of the tag on the capsul 
@@ -64,7 +63,7 @@ public class Walking : MonoBehaviour
 
 	public void Jump ()
 	{
-		if (isGrounded)
+		if (isGrounded = true)
 			myBody.velocity += jumpVelocity * Vector2.up; 		//vector2.up just sets them both to 0 same as New Vector 2 (0, 0)
 //		player.SetBool ("Jump", true);
 	}
