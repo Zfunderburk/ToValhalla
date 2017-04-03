@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour {
 	public float flashSpeed = 5f;
 	public Color flashColor = new Color(1f, 0f, 0f, 0.1f);
 	public Animator character;
+	public int endTime = 3;
 
 	public Walking walking;
 
@@ -53,8 +54,15 @@ public class PlayerHealth : MonoBehaviour {
 			character.SetBool ("Move", false);
 			character.SetBool ("Jump", false);
 			character.SetBool ("Atk", false);
-			SceneManager.LoadScene ("Menu");
+			StartCoroutine (EndGame());
+//			SceneManager.LoadScene ("Menu");
 		}
+	}
+
+	IEnumerator EndGame ()
+	{
+		yield return new WaitForSecondsRealtime (endTime);
+		SceneManager.LoadScene ("Menu");
 	}
 
 }
