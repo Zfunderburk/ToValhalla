@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
 //	public AudioClip deathClip;
 	public Slider enemyHealth;
 	public Animator zombie;
+	public int point = 0;
 
 	Animator anim;
 	AudioSource enemyAudio;
@@ -72,6 +73,7 @@ public class EnemyHealth : MonoBehaviour
 	{
 		isDead = true;
 		zombie.SetBool ("isDead", true);
+		point++;
 
 		//boxCollider.isTrigger = true;
 
