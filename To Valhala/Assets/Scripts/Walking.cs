@@ -33,17 +33,14 @@ public class Walking : MonoBehaviour
 		//Debug.Log (hit.collider.name);
 		isGrounded = hit.collider != null;
 
-		//Move (Input.GetAxisRaw ("Horizontal"));			//everyone liked the other better but leaving in to maybe use later	
+
 		Move (Input.GetAxis ("Horizontal"));
 		{
-//			character.SetBool ("Move", true);
-		}													//adds a speed up to max walking speed instead of immediatly being at that speed like raw
+			//character.SetBool ("Move", true);
+		}												
 
-//		if (Input.GetButton ("d"))
-//		{
-//			Move (Input.GetAxis ("Horizontal"));
-//			character.SetBool ("Move", true);
-//		}
+
+
 
 		if (Input.GetButtonDown ("Jump"))
 			{
@@ -74,7 +71,7 @@ public class Walking : MonoBehaviour
 		Vector2 moveVel = myBody.velocity;					//makes the rigidbody and velocity into a vector2
 		moveVel.x = horizontalInput * maxSpeed;				//moveVel is maxspeed multiplied by the input from the keyboard
 		myBody.velocity = moveVel;							//sets the velocity on the rigibody to the above statement
-//		character.SetBool ("Move", true);	
+	//	character.SetBool ("Move", true);	
 	}
 
 	public void Jump ()
@@ -88,6 +85,6 @@ public class Walking : MonoBehaviour
 	{
 		character.SetBool ("Atk", true);
 
-		character.SetBool ("Move", false);
+		//character.SetBool ("Move", false);
 	}
 }

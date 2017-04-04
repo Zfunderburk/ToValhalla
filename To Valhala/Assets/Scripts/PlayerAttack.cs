@@ -11,22 +11,15 @@ public class PlayerAttack : MonoBehaviour
 	public float minRange;*/
 	public float attMaxRange;
 	public float attMinRange;
+	 
 
 	bool enemyRange;
 	bool enemyAttRange;
 
 	float timer;
 
-	public GameObject enemy;
-
-
 	PlayerHealth playerHealth;
-	EnemyHealth enemyHealth;
-
-	void Awake ()
-	{
-		enemyHealth = enemy.GetComponent <EnemyHealth> ();
-	}
+	public EnemyHealth enemyHealth;
 
 	void Update ()
 	{
@@ -37,32 +30,24 @@ public class PlayerAttack : MonoBehaviour
 //			Attack ();
 //		}
 
-		if ((Vector2.Distance(transform.position, enemy.transform.position) < attMaxRange) && (Vector2.Distance(transform.position, enemy.transform.position) > attMinRange))
-		{
-
-			enemyAttRange = true;
-		}
-
 		timer += Time.deltaTime;
 
-		if(timer >= timeBetweenAttacks && enemyAttRange ) 
+		if(Input.GetButtonDown("Fire1") && enemyHealth != null && timer >= timeBetweenAttacks) 
 		{
 			Attack ();
 		}
-		enemyAttRange = false;
 	}
 
-	void Attack () {
+	void Attack () 
+	{
 		timer = 0f;
-		if (Input.GetButtonDown("Fire1"))
-		{
+		Debug.Log ("called attack");
+
 			character.SetBool ("Atk", true);
 
 			if(enemyHealth.currentHealth > 0) 
 			{
 				enemyHealth.TakeDamage (attackDamage);
 			}
-		}
-
 	}
 }

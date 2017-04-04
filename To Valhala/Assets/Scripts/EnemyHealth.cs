@@ -18,10 +18,6 @@ public class EnemyHealth : MonoBehaviour
 	bool damaged;
 
 
-
-	public GameObject enemy;
-
-
 	void Awake ()
 	{
 		anim = GetComponent <Animator> ();
@@ -58,20 +54,20 @@ public class EnemyHealth : MonoBehaviour
 
 	public void TakeDamage (int amount)
 	{
+		Debug.Log ("taking dmg");
 		damaged = true;
 		currentHealth -= amount;
-		enemyHealth.value = currentHealth;
+//		enemyHealth.value = currentHealth;
 		if (currentHealth <= 0 && !isDead)
 		{
 			Death ();
 		}
-		damaged = false;
 	}
 
 
 	void Death ()
 	{
-		isDead = true;
+		/*isDead = true;
 		zombie.SetBool ("isDead", true);
 		point++;
 
@@ -80,9 +76,9 @@ public class EnemyHealth : MonoBehaviour
 		anim.SetTrigger ("Dead"); 	//this "Dead" could change depending on what the animations are called make sure they match
 
 //		enemyAudio.clip = deathClip;
-		enemyAudio.Play ();
+		enemyAudio.Play ();*/
 
-		GameObject.Destroy (enemy);
+		GameObject.Destroy (this.gameObject);
 	}
 
 }
