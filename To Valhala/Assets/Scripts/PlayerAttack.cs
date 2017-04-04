@@ -43,7 +43,7 @@ public class PlayerAttack : MonoBehaviour
 		timer = 0f;
 		Debug.Log ("called attack");
 
-			character.SetBool ("Atk", true);
+			character.SetTrigger ("AtkTrig");
 
 			if(enemyHealth.currentHealth > 0) 
 			{
