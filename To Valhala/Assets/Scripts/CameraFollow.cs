@@ -11,13 +11,14 @@ public class CameraFollow : MonoBehaviour {
 
 	void Update ()
 	{
-		float camX = transform.position.x;
+		float px = player.transform.position.x;
+
 		Vector3 campos = transform.position;
-		if(camX < boundsRight.transform.position.x && camX > boundsLeft.transform.position.x)
-		{
-			campos.x = player.transform.position.x;
-		}
+
+		campos.x = Mathf.Min(Mathf.Max(px, boundsLeft.transform.position.x), boundsRight.transform.position.x);
+
 		campos.y = player.transform.position.y + yOffset;
+
 		transform.position = campos;
 	}
 

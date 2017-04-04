@@ -62,6 +62,14 @@ public class Walking : MonoBehaviour
 	{
 		if (!canMoveInAir && !isGrounded)					//if both of these are false the player can not change direction in the air
 			return;
+		if (horizontalInput < 0)
+		{
+			transform.localScale = new Vector3 (-0.6f, 0.6f, 1f);
+		}
+		else
+		{
+			transform.localScale = new Vector3 (0.6f, 0.6f, 1f);
+		}
 
 		Vector2 moveVel = myBody.velocity;					//makes the rigidbody and velocity into a vector2
 		moveVel.x = horizontalInput * maxSpeed;				//moveVel is maxspeed multiplied by the input from the keyboard
@@ -73,13 +81,13 @@ public class Walking : MonoBehaviour
 	{
 		if (isGrounded == true)
 			myBody.velocity += jumpVelocity * Vector2.up; 		//vector2.up just sets them both to 0 same as New Vector 2 (0, 0)
-//		player.SetBool ("Jump", true);
+
 	}
 
 	public void Attack ()
 	{
 		character.SetBool ("Atk", true);
-		character.SetBool ("Jump", false);
+
 		character.SetBool ("Move", false);
 	}
 }

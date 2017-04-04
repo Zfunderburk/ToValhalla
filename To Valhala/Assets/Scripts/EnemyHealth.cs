@@ -60,9 +60,11 @@ public class EnemyHealth : MonoBehaviour
 		damaged = true;
 		currentHealth -= amount;
 		enemyHealth.value = currentHealth;
-		if (currentHealth <= 0 && !isDead) {
+		if (currentHealth <= 0 && !isDead)
+		{
 			Death ();
 		}
+		damaged = false;
 	}
 
 
