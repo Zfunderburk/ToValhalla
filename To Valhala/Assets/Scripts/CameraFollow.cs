@@ -6,7 +6,8 @@ public class CameraFollow : MonoBehaviour {
 	public GameObject player;
 	public GameObject boundsLeft;
 	public GameObject boundsRight;
-	public float yOffset = 1;
+	public float xOffset = 1;
+	public float yOffset = 2;
 
 
 	void Update ()
@@ -15,7 +16,7 @@ public class CameraFollow : MonoBehaviour {
 
 		Vector3 campos = transform.position;
 
-		campos.x = Mathf.Min(Mathf.Max(px, boundsLeft.transform.position.x), boundsRight.transform.position.x);
+		campos.x = Mathf.Min(Mathf.Max(px, boundsLeft.transform.position.x), boundsRight.transform.position.x) + xOffset;
 
 		campos.y = player.transform.position.y + yOffset;
 

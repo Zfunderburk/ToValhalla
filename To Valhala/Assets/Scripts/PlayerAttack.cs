@@ -57,7 +57,9 @@ public class PlayerAttack : MonoBehaviour
 		if (Input.GetButtonDown("Fire1"))
 		{
 			character.SetBool ("Atk", true);
-			if(enemyHealth.currentHealth > 0) {
+
+			if(enemyHealth.currentHealth > 0) 
+			{
 				enemyHealth.TakeDamage (attackDamage);
 			}
 		}
