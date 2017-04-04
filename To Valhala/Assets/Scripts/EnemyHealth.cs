@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
 	bool damaged;
 
 
+
 	void Awake ()
 	{
 		anim = GetComponent <Animator> ();
@@ -69,7 +70,7 @@ public class EnemyHealth : MonoBehaviour
 	{
 		/*isDead = true;
 		zombie.SetBool ("isDead", true);
-		point++;
+	
 
 		//boxCollider.isTrigger = true;
 
@@ -77,7 +78,7 @@ public class EnemyHealth : MonoBehaviour
 
 //		enemyAudio.clip = deathClip;
 		enemyAudio.Play ();*/
-
+		FindObjectOfType<GameManager> ().enemiesKilled++;
 		GameObject.Destroy (this.gameObject);
 	}
 
