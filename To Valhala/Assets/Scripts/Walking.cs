@@ -36,8 +36,9 @@ public class Walking : MonoBehaviour
 
 		Move (Input.GetAxis ("Horizontal"));
 		{
-			//character.SetBool ("Move", true);
-		}												
+			character.SetBool ("Move", false);
+		}	
+		
 
 
 
@@ -62,6 +63,7 @@ public class Walking : MonoBehaviour
 		if (horizontalInput < 0)
 		{
 			transform.localScale = new Vector3 (-0.6f, 0.6f, 1f);
+
 		}
 		else
 		{
