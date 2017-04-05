@@ -26,6 +26,14 @@ public class Walking : MonoBehaviour
 		//tagGround = GameObject.Find (this.name + "/ground_Tag").transform; //this calls the character gameobject then calls a child of that game object called ground_Tag
 	}
 
+//	void Update () 
+//	{
+//		if(Input.GetKey(KeyCode.D))
+//		{
+//			character.SetBool ("Move", true);
+//		}
+//	}
+
 
 	void FixedUpdate ()
 	{
@@ -36,12 +44,8 @@ public class Walking : MonoBehaviour
 
 		Move (Input.GetAxis ("Horizontal"));
 		{
-			character.SetBool ("Move", false);
+			//character.SetBool ("Move", true);
 		}	
-		
-
-
-
 
 		if (Input.GetButtonDown ("Jump"))
 			{
@@ -73,7 +77,7 @@ public class Walking : MonoBehaviour
 		Vector2 moveVel = myBody.velocity;					//makes the rigidbody and velocity into a vector2
 		moveVel.x = horizontalInput * maxSpeed;				//moveVel is maxspeed multiplied by the input from the keyboard
 		myBody.velocity = moveVel;							//sets the velocity on the rigibody to the above statement
-	//	character.SetBool ("Move", true);	
+//		character.SetBool ("Move", true);	
 	}
 
 	public void Jump ()
@@ -87,6 +91,6 @@ public class Walking : MonoBehaviour
 	{
 		character.SetBool ("Atk", true);
 
-		//character.SetBool ("Move", false);
+		character.SetBool ("Move", false);
 	}
 }
