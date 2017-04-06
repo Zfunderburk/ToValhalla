@@ -44,11 +44,10 @@ public class Walking : MonoBehaviour
 
 		Move (Input.GetAxis ("Horizontal"));
 
-		if (Input.GetButtonDown ("Jump"))
+		if (Input.GetButtonDown ("Jump") && isGrounded)
 			{
 			Jump ();
 			character.SetTrigger ("Jump");
-			character.SetBool ("Atk", false);
 			}
 
 		if (Input.GetButtonDown("Fire1"))
@@ -84,9 +83,7 @@ public class Walking : MonoBehaviour
 
 	public void Jump ()
 	{
-		if (isGrounded == true)
-			myBody.velocity += jumpVelocity * Vector2.up; 		//vector2.up just sets them both to 0 same as New Vector 2 (0, 0)
-
+		myBody.velocity += jumpVelocity * Vector2.up; 		//vector2.up just sets them both to 0 same as New Vector 2 (0, 0)
 	}
 
 	public void Attack ()
