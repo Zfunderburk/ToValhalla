@@ -43,9 +43,6 @@ public class Walking : MonoBehaviour
 
 
 		Move (Input.GetAxis ("Horizontal"));
-		{
-			//character.SetBool ("Move", true);
-		}	
 
 		if (Input.GetButtonDown ("Jump"))
 			{
@@ -62,6 +59,12 @@ public class Walking : MonoBehaviour
 
 	public void Move (float horizontalInput)
 	{
+		// If we are getting input let the animator know
+		// we are implementing this using a ternary operator
+		// https://unity3d.com/learn/tutorials/topics/scripting/ternary-operator
+		character.SetBool("Move", horizontalInput != 0 ? true : false);
+
+
 		if (!canMoveInAir && !isGrounded)					//if both of these are false the player can not change direction in the air
 			return;
 		if (horizontalInput < 0)
@@ -77,7 +80,6 @@ public class Walking : MonoBehaviour
 		Vector2 moveVel = myBody.velocity;					//makes the rigidbody and velocity into a vector2
 		moveVel.x = horizontalInput * maxSpeed;				//moveVel is maxspeed multiplied by the input from the keyboard
 		myBody.velocity = moveVel;							//sets the velocity on the rigibody to the above statement
-//		character.SetBool ("Move", true);	
 	}
 
 	public void Jump ()
@@ -90,7 +92,5 @@ public class Walking : MonoBehaviour
 	public void Attack ()
 	{
 		character.SetBool ("Atk", true);
-
-		character.SetBool ("Move", false);
 	}
 }
