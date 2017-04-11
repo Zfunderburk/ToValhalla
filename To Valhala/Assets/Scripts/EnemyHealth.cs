@@ -11,9 +11,9 @@ public class EnemyHealth : MonoBehaviour
 	public Animator zombie;
 	public int point = 0;
 
-	Animator anim;
-	AudioSource enemyAudio;
-	BoxCollider2D boxCollider;
+//	Animator anim;
+//	AudioSource enemyAudio;
+//	BoxCollider2D boxCollider;
 	bool isDead;
 	bool damaged;
 
@@ -21,9 +21,9 @@ public class EnemyHealth : MonoBehaviour
 
 	void Awake ()
 	{
-		anim = GetComponent <Animator> ();
-		enemyAudio = GetComponent <AudioSource> ();
-		boxCollider = GetComponent <BoxCollider2D> ();
+//		anim = GetComponent <Animator> ();
+//		enemyAudio = GetComponent <AudioSource> ();
+//		boxCollider = GetComponent <BoxCollider2D> ();
 
 		currentHealth = startingHealth; // sets the current health to 100 so it is the same as the starting health
 	}

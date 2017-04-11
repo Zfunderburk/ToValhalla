@@ -14,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
 	public float maxRange;
 	public float minRange;
 
-	private Vector2 TargetTrans;
+//	private Vector2 TargetTrans;
 
 	public float attMaxRange;
 	public float attMinRange;
@@ -24,8 +24,8 @@ public class EnemyAttack : MonoBehaviour
 
 	public Animator zombie;
 
-	Rigidbody2D myBody;	
-	Transform myTrans;
+//	Rigidbody2D myBody;	
+//	Transform myTrans;
 	GameObject player;
 	PlayerHealth playerHealth;
 	EnemyHealth enemyHealth;
@@ -40,9 +40,9 @@ public class EnemyAttack : MonoBehaviour
 
 	void Start () 
 	{
-		myBody = this.GetComponent <Rigidbody2D> ();		 
-		myTrans = this.GetComponent <Transform> ();	
-		TargetTrans = character.transform.position;
+//		myBody = this.GetComponent <Rigidbody2D> ();		 
+//		myTrans = this.GetComponent <Transform> ();	
+//		TargetTrans = character.transform.position;
 
 	}
 
