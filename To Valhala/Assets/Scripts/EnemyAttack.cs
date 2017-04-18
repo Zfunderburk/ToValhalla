@@ -25,7 +25,8 @@ public class EnemyAttack : MonoBehaviour
 	public Animator zombie;
 
 //	Rigidbody2D myBody;	
-//	Transform myTrans;
+	Transform myTrans;
+	Transform playerTrans;
 	GameObject player;
 	PlayerHealth playerHealth;
 	EnemyHealth enemyHealth;
@@ -41,7 +42,8 @@ public class EnemyAttack : MonoBehaviour
 	void Start () 
 	{
 //		myBody = this.GetComponent <Rigidbody2D> ();		 
-//		myTrans = this.GetComponent <Transform> ();	
+		myTrans = this.GetComponent <Transform> ();	
+		playerTrans = player.GetComponent <Transform> ();	
 //		TargetTrans = character.transform.position;
 
 	}
@@ -50,13 +52,25 @@ public class EnemyAttack : MonoBehaviour
 
 	void Update ()
 	{
+		// if myTrans ? = if its true then -1 else (:) 1
+		float sign = myTrans.position.x < playerTrans.position.x ? -1 : 1;
 
+//		float sign;
+//
+//		if(myTrans.position.x < playerTrans.position.x)
+//			sign = 1f;
+//		else
+//			sign = -1f;
 
 		// enemy will move towards the character when in range
 		if ((Vector2.Distance(transform.position, character.transform.position) < maxRange) && (Vector2.Distance(transform.position, character.transform.position) > minRange))
 		{
-			transform.LookAt (character.transform);
-			transform.position += transform.forward * moveSpeed * Time.deltaTime;
+			//transform.LookAt (character.transform);
+
+
+			myTrans.GetComponentInChildren<SpriteRenderer>().flipX = sign < 0;
+
+			transform.position += transform.forward * moveSpeed * Time.deltaTime * sign;
 			zombie.SetBool ("moveRange", true);
 		
 		}
