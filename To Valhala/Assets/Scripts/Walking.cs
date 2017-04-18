@@ -26,13 +26,7 @@ public class Walking : MonoBehaviour
 		//tagGround = GameObject.Find (this.name + "/ground_Tag").transform; //this calls the character gameobject then calls a child of that game object called ground_Tag
 	}
 
-//	void Update () 
-//	{
-//		if(Input.GetKey(KeyCode.D))
-//		{
-//			character.SetBool ("Move", true);
-//		}
-//	}
+
 
 
 	void FixedUpdate ()
