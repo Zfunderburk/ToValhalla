@@ -8,9 +8,10 @@ public class PlayerHealth : MonoBehaviour {
 	public int startingHealth = 100;									//States starting health
 	public int currentHealth;  											// states current health
 	public Slider healthSlider; 										//Reference to UI Slider
+	public Image healthFill;
 	public Image damageImage;  											//Flash to show Damage
 	public float flashSpeed = 5f;
-	public Color flashColor = new Color(1f, 0f, 0f, 0.1f);
+	public Color flashColor = new Color(1f, 0f, 0f, 0.5f);
 	public Animator character;
 	public int endTime = 3;
 
@@ -37,9 +38,29 @@ public class PlayerHealth : MonoBehaviour {
 		damaged = true;
 		currentHealth -= amount;
 		healthSlider.value = currentHealth;
+		HealthColor();
 		if(currentHealth <=0 && !isDead)
 		{
 			Dead ();
+		}
+
+	}
+
+	void HealthColor () 
+	{
+		if(currentHealth > 50)
+		{
+			healthFill.color = new Color (0f, 1f, 0f, 1f);
+		}
+
+		else if (50 > currentHealth && currentHealth > 25)
+		{
+			healthFill.color = new Color (1f, 1f, 0f, 1f);
+		}
+
+		else if (currentHealth < 25)
+		{
+			healthFill.color = new Color (1f, 0f, 0f, 1f);
 		}
 
 	}

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d084e3bab31e0452dbc45a0bad2b2e7b
-timeCreated: 1490834638
+timeCreated: 1492531988
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -73,8 +73,8 @@ TextureImporter:
         y: 618
         width: 180
         height: 443
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.64139956, y: 0.55223066}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -86,8 +86,8 @@ TextureImporter:
         y: 617
         width: 184
         height: 444
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.6257505, y: 0.55732423}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -99,8 +99,8 @@ TextureImporter:
         y: 618
         width: 187
         height: 446
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.6237333, y: 0.567443}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -112,8 +112,8 @@ TextureImporter:
         y: 617
         width: 189
         height: 446
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.53672737, y: 0.5726309}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -125,8 +125,8 @@ TextureImporter:
         y: 617
         width: 187
         height: 446
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5989866, y: 0.567443}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -138,8 +138,8 @@ TextureImporter:
         y: 617
         width: 184
         height: 444
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.6383256, y: 0.55732423}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -151,8 +151,8 @@ TextureImporter:
         y: 617
         width: 180
         height: 443
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.62854546, y: 0.55223066}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -164,8 +164,8 @@ TextureImporter:
         y: 617
         width: 184
         height: 446
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.61317575, y: 0.54150337}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -177,8 +177,8 @@ TextureImporter:
         y: 130
         width: 210
         height: 445
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5330545, y: 0.5363971}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -186,12 +186,12 @@ TextureImporter:
       name: ZomMove10
       rect:
         serializedVersion: 2
-        x: 290
+        x: 292
         y: 130
         width: 232
         height: 440
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.47008002, y: 0.5262934}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -203,8 +203,8 @@ TextureImporter:
         y: 130
         width: 210
         height: 445
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5220363, y: 0.5415967}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -216,8 +216,8 @@ TextureImporter:
         y: 130
         width: 184
         height: 446
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.61317575, y: 0.5518793}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -229,8 +229,8 @@ TextureImporter:
         y: 133
         width: 180
         height: 443
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.64139944, y: 0.55223066}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
