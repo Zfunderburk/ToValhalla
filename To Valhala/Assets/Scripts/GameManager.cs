@@ -16,12 +16,12 @@ public class GameManager : MonoBehaviour {
 			Color temp = winText.color;
 			temp.a = 1f;
 			winText.color = temp; 
-			Color temp1 = fade.color;
+//			Color temp1 = fade.color;
 //			SceneManager.LoadScene("Menu");
 			if(!isGameOver){
 				isGameOver = true;
-				temp1.a = 5f * Time.deltaTime;
-				fade.color = temp; 
+//				temp1.a = 5f * Time.deltaTime;
+//				fade.color = temp; 
 				StartCoroutine(LoadSceneinSeconds(5f));
 			}
 		}
