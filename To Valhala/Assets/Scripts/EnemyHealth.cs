@@ -14,8 +14,8 @@ public class EnemyHealth : MonoBehaviour
 //	Animator anim;
 //	AudioSource enemyAudio;
 //	BoxCollider2D boxCollider;
-	bool isDead;
-	bool damaged;
+//	bool isDead;
+//	bool damaged;
 
 
 
@@ -39,10 +39,10 @@ public class EnemyHealth : MonoBehaviour
 	public void TakeDamage (int amount)
 	{
 		Debug.Log ("taking dmg");
-		damaged = true;
+//		damaged = true;
 		currentHealth -= amount;
 //		enemyHealth.value = currentHealth;
-		if (currentHealth <= 0 && !isDead)
+		if (currentHealth <= 0)// && !isDead)
 		{
 			Death ();
 		}
