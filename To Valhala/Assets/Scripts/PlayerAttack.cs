@@ -12,6 +12,8 @@ public class PlayerAttack : MonoBehaviour
 	public float attMaxRange;
 	public float attMinRange;
 	 
+	public AudioSource audioAtt;
+	public AudioClip axeSound;
 
 	bool enemyRange;
 	bool enemyAttRange;
@@ -20,6 +22,11 @@ public class PlayerAttack : MonoBehaviour
 
 	PlayerHealth playerHealth;
 	public EnemyHealth enemyHealth;
+
+	void Start()
+	{
+		audioAtt = GetComponent<AudioSource> ();
+	}
 
 	void Update ()
 	{
@@ -40,6 +47,8 @@ public class PlayerAttack : MonoBehaviour
 
 	void Attack () 
 	{
+		audioAtt.clip = axeSound;
+		audioAtt.Play ();
 		timer = 0f;
 		Debug.Log ("called attack");
 

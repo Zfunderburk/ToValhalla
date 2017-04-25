@@ -17,6 +17,10 @@ public class Walking : MonoBehaviour
 	public bool canMoveInAir = true;
 	public bool isGrounded = false;					//will allow for double jumps
 
+	public AudioSource walk;
+	public AudioClip walkClip;
+
+
 
 	void Start ()
 	{
@@ -37,6 +41,9 @@ public class Walking : MonoBehaviour
 
 
 		Move (Input.GetAxis ("Horizontal"));
+
+		walk.clip = walkClip;
+		walk.Play ();
 
 		if (Input.GetButtonDown ("Jump") && isGrounded)
 			{

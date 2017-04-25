@@ -9,6 +9,13 @@ public class CameraFollow : MonoBehaviour {
 	public float xOffset = 1;
 	public float yOffset = 2;
 
+	public AudioListener listener;
+
+	void Start()
+	{
+		listener = this.GetComponent<AudioListener> ();
+	}
+
 
 	void Update ()
 	{

@@ -15,10 +15,20 @@ public class PlayerHealth : MonoBehaviour {
 	public Animator character;
 	public int endTime = 3;
 
+
 	public Walking walking;
+
+	public AudioSource dmgSound;
+	public AudioClip hitSound;
+
 
 	bool isDead;
 	bool damaged;														// True when Damaged
+
+	void Start()
+	{
+		dmgSound = this.GetComponent<AudioSource> ();
+	}
 				
 	void Awake () {
 		currentHealth = startingHealth;
@@ -34,7 +44,10 @@ public class PlayerHealth : MonoBehaviour {
 		damaged = false; 
 	}
 
-	public void TakeDamage (int amount) {
+	public void TakeDamage (int amount) 
+	{
+		dmgSound.clip = hitSound;
+		dmgSound.Play ();
 		damaged = true;
 		currentHealth -= amount;
 		healthSlider.value = currentHealth;
