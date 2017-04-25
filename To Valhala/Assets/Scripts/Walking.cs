@@ -42,9 +42,6 @@ public class Walking : MonoBehaviour
 
 		Move (Input.GetAxis ("Horizontal"));
 
-		walk.clip = walkClip;
-		walk.Play ();
-
 		if (Input.GetButtonDown ("Jump") && isGrounded)
 			{
 			Jump ();
@@ -64,6 +61,8 @@ public class Walking : MonoBehaviour
 		// https://unity3d.com/learn/tutorials/topics/scripting/ternary-operator
 		character.SetBool("Move", horizontalInput != 0 ? true : false);
 
+		walk.clip = walkClip;
+		walk.Play ();
 
 		if (!canMoveInAir && !isGrounded)					//if both of these are false the player can not change direction in the air
 			return;
