@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour {
 	
@@ -10,7 +11,16 @@ public class GameManager : MonoBehaviour {
 	public Image fade;
 	private bool isGameOver;
 
+	public AudioSource mainSound;
+	public AudioClip m1;
+
+
+	void Start()
+	{
+		mainSound = this.GetComponent<AudioSource> ();
+	}
 	void Update () {
+
 		if(enemiesKilled == 4)
 		{
 			Color temp = winText.color;
@@ -32,4 +42,14 @@ public class GameManager : MonoBehaviour {
 		yield return new WaitForSeconds(seconds);
 		SceneManager.LoadScene("Menu");
 	}
+
+
+
+	void PlayMusic ()
+	{
+		mainSound.clip = m1;
+		mainSound.Play ();
+	}
+
+
 }

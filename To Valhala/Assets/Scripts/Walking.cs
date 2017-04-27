@@ -17,8 +17,8 @@ public class Walking : MonoBehaviour
 	public bool canMoveInAir = true;
 	public bool isGrounded = false;					//will allow for double jumps
 
-	public AudioSource walk;
-	public AudioClip walkClip;
+	//public AudioSource walk;
+	//public AudioClip walkClip;
 
 
 
@@ -61,8 +61,8 @@ public class Walking : MonoBehaviour
 		// https://unity3d.com/learn/tutorials/topics/scripting/ternary-operator
 		character.SetBool("Move", horizontalInput != 0 ? true : false);
 
-		walk.clip = walkClip;
-		walk.Play ();
+	//	walk.clip = walkClip;
+	//	walk.Play ();
 
 		if (!canMoveInAir && !isGrounded)					//if both of these are false the player can not change direction in the air
 			return;
